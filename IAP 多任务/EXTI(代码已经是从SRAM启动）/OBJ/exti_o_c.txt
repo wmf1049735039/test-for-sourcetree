@@ -1,0 +1,1610 @@
+
+========================================================================
+
+** ELF Header Information
+
+    File Name: exti.o
+
+    Machine class: ELFCLASS32 (32-bit)
+    Data encoding: ELFDATA2LSB (Little endian)
+    Header version: EV_CURRENT (Current version)
+    Operating System ABI: none
+    ABI Version: 0
+    File Type: ET_REL (Relocatable object) (1)
+    Machine: EM_ARM (ARM)
+
+    Entry offset (in SHF_ENTRYSECT section): 0x00000000
+    Flags: None (0x05000000)
+
+    ARM ELF revision: 5 (ABI version 2)
+
+    Built with
+    Component: ARM Compiler 5.05 update 1 (build 106) Tool: armasm [4d0efa]
+    Component: ARM Compiler 5.05 update 1 (build 106) Tool: armlink [4d0efa]
+
+    Header size: 52 bytes (0x34)
+    Program header entry size: 0 bytes (0x0)
+    Section header entry size: 40 bytes (0x28)
+
+    Program header entries: 0
+    Section header entries: 293
+
+    Program header offset: 0 (0x00000000)
+    Section header offset: 468644 (0x000726a4)
+
+    Section header string table index: 290
+
+========================================================================
+
+** Section #1 '.rev16_text' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 4 bytes (alignment 4)
+    Address: 0x00000000
+
+    $t
+    .rev16_text
+    $v0
+    __asm___6_exti_c_649dcdc2____REV16
+        0x00000000:    ba40        @.      REV16    r0,r0
+        0x00000002:    4770        pG      BX       lr
+
+** Section #2 '.revsh_text' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 4 bytes (alignment 4)
+    Address: 0x00000000
+
+    $t
+    .revsh_text
+    $v0
+    __asm___6_exti_c_649dcdc2____REVSH
+        0x00000000:    bac0        ..      REVSH    r0,r0
+        0x00000002:    4770        pG      BX       lr
+
+** Section #3 'i.EXTI0_IRQHandler' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 52 bytes (alignment 4)
+    Address: 0x00000000
+
+    $t
+    i.EXTI0_IRQHandler
+    EXTI0_IRQHandler
+        0x00000000:    b510        ..      PUSH     {r4,lr}
+        0x00000002:    200a        .       MOVS     r0,#0xa
+        0x00000004:    f7fffffe    ....    BL       delay_ms
+        0x00000008:    2101        .!      MOVS     r1,#1
+        0x0000000a:    4808        .H      LDR      r0,[pc,#32] ; [0x2c] = 0x40020000
+        0x0000000c:    f7fffffe    ....    BL       GPIO_ReadInputDataBit
+        0x00000010:    2801        .(      CMP      r0,#1
+        0x00000012:    d107        ..      BNE      {pc}+0x12 ; 0x24
+        0x00000014:    4806        .H      LDR      r0,[pc,#24] ; [0x30] = 0x424282a0
+        0x00000016:    6800        .h      LDR      r0,[r0,#0]
+        0x00000018:    b908        ..      CBNZ     r0,{pc}+0x6 ; 0x1e
+        0x0000001a:    2001        .       MOVS     r0,#1
+        0x0000001c:    e000        ..      B        {pc}+0x4 ; 0x20
+        0x0000001e:    2000        .       MOVS     r0,#0
+        0x00000020:    4903        .I      LDR      r1,[pc,#12] ; [0x30] = 0x424282a0
+        0x00000022:    6008        .`      STR      r0,[r1,#0]
+        0x00000024:    2001        .       MOVS     r0,#1
+        0x00000026:    f7fffffe    ....    BL       EXTI_ClearITPendingBit
+        0x0000002a:    bd10        ..      POP      {r4,pc}
+    $d
+        0x0000002c:    40020000    ...@    DCD    1073872896
+        0x00000030:    424282a0    ..BB    DCD    1111655072
+
+** Section #215 '.reli.EXTI0_IRQHandler' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #3 'i.EXTI0_IRQHandler'
+
+
+** Section #4 'i.EXTI2_IRQHandler' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 52 bytes (alignment 4)
+    Address: 0x00000000
+
+    $t
+    i.EXTI2_IRQHandler
+    EXTI2_IRQHandler
+        0x00000000:    b510        ..      PUSH     {r4,lr}
+        0x00000002:    200a        .       MOVS     r0,#0xa
+        0x00000004:    f7fffffe    ....    BL       delay_ms
+        0x00000008:    2104        .!      MOVS     r1,#4
+        0x0000000a:    4808        .H      LDR      r0,[pc,#32] ; [0x2c] = 0x40021000
+        0x0000000c:    f7fffffe    ....    BL       GPIO_ReadInputDataBit
+        0x00000010:    b938        8.      CBNZ     r0,{pc}+0x12 ; 0x22
+        0x00000012:    4807        .H      LDR      r0,[pc,#28] ; [0x30] = 0x424282a4
+        0x00000014:    6800        .h      LDR      r0,[r0,#0]
+        0x00000016:    b908        ..      CBNZ     r0,{pc}+0x6 ; 0x1c
+        0x00000018:    2001        .       MOVS     r0,#1
+        0x0000001a:    e000        ..      B        {pc}+0x4 ; 0x1e
+        0x0000001c:    2000        .       MOVS     r0,#0
+        0x0000001e:    4904        .I      LDR      r1,[pc,#16] ; [0x30] = 0x424282a4
+        0x00000020:    6008        .`      STR      r0,[r1,#0]
+        0x00000022:    2004        .       MOVS     r0,#4
+        0x00000024:    f7fffffe    ....    BL       EXTI_ClearITPendingBit
+        0x00000028:    bd10        ..      POP      {r4,pc}
+    $d
+        0x0000002a:    0000        ..      DCW    0
+        0x0000002c:    40021000    ...@    DCD    1073876992
+        0x00000030:    424282a4    ..BB    DCD    1111655076
+
+** Section #216 '.reli.EXTI2_IRQHandler' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #4 'i.EXTI2_IRQHandler'
+
+
+** Section #5 'i.EXTI3_IRQHandler' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 52 bytes (alignment 4)
+    Address: 0x00000000
+
+    $t
+    i.EXTI3_IRQHandler
+    EXTI3_IRQHandler
+        0x00000000:    b510        ..      PUSH     {r4,lr}
+        0x00000002:    200a        .       MOVS     r0,#0xa
+        0x00000004:    f7fffffe    ....    BL       delay_ms
+        0x00000008:    2108        .!      MOVS     r1,#8
+        0x0000000a:    4808        .H      LDR      r0,[pc,#32] ; [0x2c] = 0x40021000
+        0x0000000c:    f7fffffe    ....    BL       GPIO_ReadInputDataBit
+        0x00000010:    b938        8.      CBNZ     r0,{pc}+0x12 ; 0x22
+        0x00000012:    4807        .H      LDR      r0,[pc,#28] ; [0x30] = 0x424282a8
+        0x00000014:    6800        .h      LDR      r0,[r0,#0]
+        0x00000016:    b908        ..      CBNZ     r0,{pc}+0x6 ; 0x1c
+        0x00000018:    2001        .       MOVS     r0,#1
+        0x0000001a:    e000        ..      B        {pc}+0x4 ; 0x1e
+        0x0000001c:    2000        .       MOVS     r0,#0
+        0x0000001e:    4904        .I      LDR      r1,[pc,#16] ; [0x30] = 0x424282a8
+        0x00000020:    6008        .`      STR      r0,[r1,#0]
+        0x00000022:    2008        .       MOVS     r0,#8
+        0x00000024:    f7fffffe    ....    BL       EXTI_ClearITPendingBit
+        0x00000028:    bd10        ..      POP      {r4,pc}
+    $d
+        0x0000002a:    0000        ..      DCW    0
+        0x0000002c:    40021000    ...@    DCD    1073876992
+        0x00000030:    424282a8    ..BB    DCD    1111655080
+
+** Section #217 '.reli.EXTI3_IRQHandler' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #5 'i.EXTI3_IRQHandler'
+
+
+** Section #6 'i.EXTI4_IRQHandler' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 76 bytes (alignment 4)
+    Address: 0x00000000
+
+    $t
+    i.EXTI4_IRQHandler
+    EXTI4_IRQHandler
+        0x00000000:    b510        ..      PUSH     {r4,lr}
+        0x00000002:    200a        .       MOVS     r0,#0xa
+        0x00000004:    f7fffffe    ....    BL       delay_ms
+        0x00000008:    2110        .!      MOVS     r1,#0x10
+        0x0000000a:    480d        .H      LDR      r0,[pc,#52] ; [0x40] = 0x40021000
+        0x0000000c:    f7fffffe    ....    BL       GPIO_ReadInputDataBit
+        0x00000010:    b988        ..      CBNZ     r0,{pc}+0x26 ; 0x36
+        0x00000012:    480c        .H      LDR      r0,[pc,#48] ; [0x44] = 0x424282a4
+        0x00000014:    6800        .h      LDR      r0,[r0,#0]
+        0x00000016:    b908        ..      CBNZ     r0,{pc}+0x6 ; 0x1c
+        0x00000018:    2001        .       MOVS     r0,#1
+        0x0000001a:    e000        ..      B        {pc}+0x4 ; 0x1e
+        0x0000001c:    2000        .       MOVS     r0,#0
+        0x0000001e:    4909        .I      LDR      r1,[pc,#36] ; [0x44] = 0x424282a4
+        0x00000020:    6008        .`      STR      r0,[r1,#0]
+        0x00000022:    4809        .H      LDR      r0,[pc,#36] ; [0x48] = 0x42428000
+        0x00000024:    f8d002a8    ....    LDR      r0,[r0,#0x2a8]
+        0x00000028:    b908        ..      CBNZ     r0,{pc}+0x6 ; 0x2e
+        0x0000002a:    2001        .       MOVS     r0,#1
+        0x0000002c:    e000        ..      B        {pc}+0x4 ; 0x30
+        0x0000002e:    2000        .       MOVS     r0,#0
+        0x00000030:    4904        .I      LDR      r1,[pc,#16] ; [0x44] = 0x424282a4
+        0x00000032:    1d09        ..      ADDS     r1,r1,#4
+        0x00000034:    6008        .`      STR      r0,[r1,#0]
+        0x00000036:    2010        .       MOVS     r0,#0x10
+        0x00000038:    f7fffffe    ....    BL       EXTI_ClearITPendingBit
+        0x0000003c:    bd10        ..      POP      {r4,pc}
+    $d
+        0x0000003e:    0000        ..      DCW    0
+        0x00000040:    40021000    ...@    DCD    1073876992
+        0x00000044:    424282a4    ..BB    DCD    1111655076
+        0x00000048:    42428000    ..BB    DCD    1111654400
+
+** Section #218 '.reli.EXTI4_IRQHandler' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #6 'i.EXTI4_IRQHandler'
+
+
+** Section #7 'i.EXTIX_Init' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 222 bytes (alignment 2)
+    Address: 0x00000000
+
+    $t
+    i.EXTIX_Init
+    EXTIX_Init
+        0x00000000:    b50e        ..      PUSH     {r1-r3,lr}
+        0x00000002:    f7fffffe    ....    BL       KEY_Init
+        0x00000006:    2101        .!      MOVS     r1,#1
+        0x00000008:    0388        ..      LSLS     r0,r1,#14
+        0x0000000a:    f7fffffe    ....    BL       RCC_APB2PeriphClockCmd
+        0x0000000e:    2102        .!      MOVS     r1,#2
+        0x00000010:    2004        .       MOVS     r0,#4
+        0x00000012:    f7fffffe    ....    BL       SYSCFG_EXTILineConfig
+        0x00000016:    2103        .!      MOVS     r1,#3
+        0x00000018:    2004        .       MOVS     r0,#4
+        0x0000001a:    f7fffffe    ....    BL       SYSCFG_EXTILineConfig
+        0x0000001e:    2104        .!      MOVS     r1,#4
+        0x00000020:    4608        .F      MOV      r0,r1
+        0x00000022:    f7fffffe    ....    BL       SYSCFG_EXTILineConfig
+        0x00000026:    2100        .!      MOVS     r1,#0
+        0x00000028:    4608        .F      MOV      r0,r1
+        0x0000002a:    f7fffffe    ....    BL       SYSCFG_EXTILineConfig
+        0x0000002e:    2001        .       MOVS     r0,#1
+        0x00000030:    9000        ..      STR      r0,[sp,#0]
+        0x00000032:    2000        .       MOVS     r0,#0
+        0x00000034:    f88d0004    ....    STRB     r0,[sp,#4]
+        0x00000038:    2008        .       MOVS     r0,#8
+        0x0000003a:    f88d0005    ....    STRB     r0,[sp,#5]
+        0x0000003e:    2001        .       MOVS     r0,#1
+        0x00000040:    f88d0006    ....    STRB     r0,[sp,#6]
+        0x00000044:    4668        hF      MOV      r0,sp
+        0x00000046:    f7fffffe    ....    BL       EXTI_Init
+        0x0000004a:    201c        .       MOVS     r0,#0x1c
+        0x0000004c:    9000        ..      STR      r0,[sp,#0]
+        0x0000004e:    2000        .       MOVS     r0,#0
+        0x00000050:    f88d0004    ....    STRB     r0,[sp,#4]
+        0x00000054:    200c        .       MOVS     r0,#0xc
+        0x00000056:    f88d0005    ....    STRB     r0,[sp,#5]
+        0x0000005a:    2001        .       MOVS     r0,#1
+        0x0000005c:    f88d0006    ....    STRB     r0,[sp,#6]
+        0x00000060:    4668        hF      MOV      r0,sp
+        0x00000062:    f7fffffe    ....    BL       EXTI_Init
+        0x00000066:    2006        .       MOVS     r0,#6
+        0x00000068:    f88d0008    ....    STRB     r0,[sp,#8]
+        0x0000006c:    2000        .       MOVS     r0,#0
+        0x0000006e:    f88d0009    ....    STRB     r0,[sp,#9]
+        0x00000072:    2002        .       MOVS     r0,#2
+        0x00000074:    f88d000a    ....    STRB     r0,[sp,#0xa]
+        0x00000078:    2001        .       MOVS     r0,#1
+        0x0000007a:    f88d000b    ....    STRB     r0,[sp,#0xb]
+        0x0000007e:    a802        ..      ADD      r0,sp,#8
+        0x00000080:    f7fffffe    ....    BL       NVIC_Init
+        0x00000084:    2008        .       MOVS     r0,#8
+        0x00000086:    f88d0008    ....    STRB     r0,[sp,#8]
+        0x0000008a:    2003        .       MOVS     r0,#3
+        0x0000008c:    f88d0009    ....    STRB     r0,[sp,#9]
+        0x00000090:    2002        .       MOVS     r0,#2
+        0x00000092:    f88d000a    ....    STRB     r0,[sp,#0xa]
+        0x00000096:    2001        .       MOVS     r0,#1
+        0x00000098:    f88d000b    ....    STRB     r0,[sp,#0xb]
+        0x0000009c:    a802        ..      ADD      r0,sp,#8
+        0x0000009e:    f7fffffe    ....    BL       NVIC_Init
+        0x000000a2:    2009        .       MOVS     r0,#9
+        0x000000a4:    f88d0008    ....    STRB     r0,[sp,#8]
+        0x000000a8:    2002        .       MOVS     r0,#2
+        0x000000aa:    f88d0009    ....    STRB     r0,[sp,#9]
+        0x000000ae:    f88d000a    ....    STRB     r0,[sp,#0xa]
+        0x000000b2:    2001        .       MOVS     r0,#1
+        0x000000b4:    f88d000b    ....    STRB     r0,[sp,#0xb]
+        0x000000b8:    a802        ..      ADD      r0,sp,#8
+        0x000000ba:    f7fffffe    ....    BL       NVIC_Init
+        0x000000be:    200a        .       MOVS     r0,#0xa
+        0x000000c0:    f88d0008    ....    STRB     r0,[sp,#8]
+        0x000000c4:    2001        .       MOVS     r0,#1
+        0x000000c6:    f88d0009    ....    STRB     r0,[sp,#9]
+        0x000000ca:    2002        .       MOVS     r0,#2
+        0x000000cc:    f88d000a    ....    STRB     r0,[sp,#0xa]
+        0x000000d0:    2001        .       MOVS     r0,#1
+        0x000000d2:    f88d000b    ....    STRB     r0,[sp,#0xb]
+        0x000000d6:    a802        ..      ADD      r0,sp,#8
+        0x000000d8:    f7fffffe    ....    BL       NVIC_Init
+        0x000000dc:    bd0e        ..      POP      {r1-r3,pc}
+
+** Section #219 '.reli.EXTIX_Init' (SHT_REL)
+    Size   : 96 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    12 relocations applied to section #7 'i.EXTIX_Init'
+
+
+** Section #8 '.debug_info' (SHT_PROGBITS)
+    Size   : 224 bytes
+
+
+** Section #220 '.rel.debug_info' (SHT_REL)
+    Size   : 48 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    6 relocations applied to section #8 '.debug_info'
+
+
+** Section #9 '.debug_line' (SHT_PROGBITS)
+    Size   : 76 bytes
+
+
+** Section #221 '.rel.debug_line' (SHT_REL)
+    Size   : 8 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    1 relocations applied to section #9 '.debug_line'
+
+
+** Section #10 '.debug_info' (SHT_PROGBITS)
+    Size   : 224 bytes
+
+
+** Section #222 '.rel.debug_info' (SHT_REL)
+    Size   : 48 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    6 relocations applied to section #10 '.debug_info'
+
+
+** Section #11 '.debug_line' (SHT_PROGBITS)
+    Size   : 76 bytes
+
+
+** Section #223 '.rel.debug_line' (SHT_REL)
+    Size   : 8 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    1 relocations applied to section #11 '.debug_line'
+
+
+** Section #12 '.debug_frame' (SHT_PROGBITS)
+    Size   : 116 bytes
+
+
+** Section #224 '.rel.debug_frame' (SHT_REL)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    2 relocations applied to section #12 '.debug_frame'
+
+
+** Section #13 '.debug_frame' (SHT_PROGBITS)
+    Size   : 116 bytes
+
+
+** Section #225 '.rel.debug_frame' (SHT_REL)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    2 relocations applied to section #13 '.debug_frame'
+
+
+** Section #14 '.debug_frame' (SHT_PROGBITS)
+    Size   : 124 bytes
+
+
+** Section #226 '.rel.debug_frame' (SHT_REL)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    2 relocations applied to section #14 '.debug_frame'
+
+
+** Section #15 '.debug_frame' (SHT_PROGBITS)
+    Size   : 124 bytes
+
+
+** Section #227 '.rel.debug_frame' (SHT_REL)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    2 relocations applied to section #15 '.debug_frame'
+
+
+** Section #16 '.debug_frame' (SHT_PROGBITS)
+    Size   : 124 bytes
+
+
+** Section #228 '.rel.debug_frame' (SHT_REL)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    2 relocations applied to section #16 '.debug_frame'
+
+
+** Section #17 '.debug_frame' (SHT_PROGBITS)
+    Size   : 124 bytes
+
+
+** Section #229 '.rel.debug_frame' (SHT_REL)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    2 relocations applied to section #17 '.debug_frame'
+
+
+** Section #18 '.debug_frame' (SHT_PROGBITS)
+    Size   : 124 bytes
+
+
+** Section #230 '.rel.debug_frame' (SHT_REL)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    2 relocations applied to section #18 '.debug_frame'
+
+
+** Section #19 '.debug_info' (SHT_PROGBITS)
+    Size   : 180 bytes
+
+
+** Section #231 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #19 '.debug_info'
+
+
+** Section #20 '.debug_info' (SHT_PROGBITS)
+    Size   : 220 bytes
+
+
+** Section #232 '.rel.debug_info' (SHT_REL)
+    Size   : 56 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    7 relocations applied to section #20 '.debug_info'
+
+
+** Section #21 '.debug_info' (SHT_PROGBITS)
+    Size   : 220 bytes
+
+
+** Section #233 '.rel.debug_info' (SHT_REL)
+    Size   : 56 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    7 relocations applied to section #21 '.debug_info'
+
+
+** Section #22 '.debug_info' (SHT_PROGBITS)
+    Size   : 220 bytes
+
+
+** Section #234 '.rel.debug_info' (SHT_REL)
+    Size   : 56 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    7 relocations applied to section #22 '.debug_info'
+
+
+** Section #23 '.debug_info' (SHT_PROGBITS)
+    Size   : 220 bytes
+
+
+** Section #235 '.rel.debug_info' (SHT_REL)
+    Size   : 56 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    7 relocations applied to section #23 '.debug_info'
+
+
+** Section #24 '.debug_info' (SHT_PROGBITS)
+    Size   : 272 bytes
+
+
+** Section #236 '.rel.debug_info' (SHT_REL)
+    Size   : 72 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    9 relocations applied to section #24 '.debug_info'
+
+
+** Section #25 '.debug_line' (SHT_PROGBITS)
+    Size   : 60 bytes
+
+
+** Section #26 '.debug_line' (SHT_PROGBITS)
+    Size   : 100 bytes
+
+
+** Section #237 '.rel.debug_line' (SHT_REL)
+    Size   : 8 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    1 relocations applied to section #26 '.debug_line'
+
+
+** Section #27 '.debug_line' (SHT_PROGBITS)
+    Size   : 100 bytes
+
+
+** Section #238 '.rel.debug_line' (SHT_REL)
+    Size   : 8 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    1 relocations applied to section #27 '.debug_line'
+
+
+** Section #28 '.debug_line' (SHT_PROGBITS)
+    Size   : 100 bytes
+
+
+** Section #239 '.rel.debug_line' (SHT_REL)
+    Size   : 8 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    1 relocations applied to section #28 '.debug_line'
+
+
+** Section #29 '.debug_line' (SHT_PROGBITS)
+    Size   : 104 bytes
+
+
+** Section #240 '.rel.debug_line' (SHT_REL)
+    Size   : 8 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    1 relocations applied to section #29 '.debug_line'
+
+
+** Section #30 '.debug_line' (SHT_PROGBITS)
+    Size   : 248 bytes
+
+
+** Section #241 '.rel.debug_line' (SHT_REL)
+    Size   : 8 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    1 relocations applied to section #30 '.debug_line'
+
+
+** Section #31 '.debug_loc' (SHT_PROGBITS)
+    Size   : 32 bytes
+
+
+** Section #32 '.debug_loc' (SHT_PROGBITS)
+    Size   : 32 bytes
+
+
+** Section #33 '.debug_loc' (SHT_PROGBITS)
+    Size   : 32 bytes
+
+
+** Section #34 '.debug_loc' (SHT_PROGBITS)
+    Size   : 32 bytes
+
+
+** Section #35 '.debug_loc' (SHT_PROGBITS)
+    Size   : 32 bytes
+
+
+** Section #36 '.debug_macinfo' (SHT_PROGBITS)
+    Size   : 1056 bytes
+
+
+** Section #37 '.debug_pubnames' (SHT_PROGBITS)
+    Size   : 39 bytes
+
+
+** Section #242 '.rel.debug_pubnames' (SHT_REL)
+    Size   : 8 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    1 relocations applied to section #37 '.debug_pubnames'
+
+
+** Section #38 '.debug_pubnames' (SHT_PROGBITS)
+    Size   : 39 bytes
+
+
+** Section #243 '.rel.debug_pubnames' (SHT_REL)
+    Size   : 8 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    1 relocations applied to section #38 '.debug_pubnames'
+
+
+** Section #39 '.debug_pubnames' (SHT_PROGBITS)
+    Size   : 39 bytes
+
+
+** Section #244 '.rel.debug_pubnames' (SHT_REL)
+    Size   : 8 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    1 relocations applied to section #39 '.debug_pubnames'
+
+
+** Section #40 '.debug_pubnames' (SHT_PROGBITS)
+    Size   : 39 bytes
+
+
+** Section #245 '.rel.debug_pubnames' (SHT_REL)
+    Size   : 8 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    1 relocations applied to section #40 '.debug_pubnames'
+
+
+** Section #41 '.debug_pubnames' (SHT_PROGBITS)
+    Size   : 33 bytes
+
+
+** Section #246 '.rel.debug_pubnames' (SHT_REL)
+    Size   : 8 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    1 relocations applied to section #41 '.debug_pubnames'
+
+
+** Section #42 '__ARM_asm.debug_abbrev.1' (SHT_GROUP)
+    Size   : 8 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #43 '.debug_abbrev' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 32 bytes
+
+
+** Section #44 '__ARM_grp.stdint.h.2_QF1000_PKoLqdxaAm3_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #45 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 2196 bytes
+
+
+** Section #46 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 80 bytes
+
+
+** Section #47 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 776 bytes
+
+
+** Section #247 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #47 '.debug_info'
+
+
+** Section #48 '__ARM_grp.core_cmInstr.h.2_EI0000_4a4xzp2_HB0_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #49 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 556 bytes
+
+
+** Section #50 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 60 bytes
+
+
+** Section #51 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 180 bytes
+
+
+** Section #248 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #51 '.debug_info'
+
+
+** Section #52 '__ARM_grp.core_cmFunc.h.2_Iu1000_3vWwiV3KtKb_O00000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #53 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 96 bytes
+
+
+** Section #54 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 60 bytes
+
+
+** Section #55 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 1252 bytes
+
+
+** Section #249 '.rel.debug_info' (SHT_REL)
+    Size   : 376 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    47 relocations applied to section #55 '.debug_info'
+
+
+** Section #56 '__ARM_grp.core_cm4_simd.h.2_0a1000_2xy0BGpA2E3_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #57 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 1496 bytes
+
+
+** Section #58 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 60 bytes
+
+
+** Section #59 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 180 bytes
+
+
+** Section #250 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #59 '.debug_info'
+
+
+** Section #60 '__ARM_grp.core_cm4.h.2_$v3200_ByJILxXb2sb_D60000' (SHT_GROUP)
+    Size   : 20 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #61 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 21704 bytes
+
+
+** Section #62 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 156 bytes
+
+
+** Section #63 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 4492 bytes
+
+
+** Section #251 '.rel.debug_info' (SHT_REL)
+    Size   : 856 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    107 relocations applied to section #63 '.debug_info'
+
+
+** Section #64 '.debug_pubnames' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 35 bytes
+
+
+** Section #252 '.rel.debug_pubnames' (SHT_REL)
+    Size   : 8 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    1 relocations applied to section #64 '.debug_pubnames'
+
+
+** Section #65 '__ARM_grp.system_stm32f4xx.h.2_6o2000_XMNgJcBugPe_f00000' (SHT_GROUP)
+    Size   : 20 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #66 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 32 bytes
+
+
+** Section #67 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 64 bytes
+
+
+** Section #68 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 208 bytes
+
+
+** Section #253 '.rel.debug_info' (SHT_REL)
+    Size   : 32 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    4 relocations applied to section #68 '.debug_info'
+
+
+** Section #69 '.debug_pubnames' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 38 bytes
+
+
+** Section #254 '.rel.debug_pubnames' (SHT_REL)
+    Size   : 8 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    1 relocations applied to section #69 '.debug_pubnames'
+
+
+** Section #70 '__ARM_grp.stm32f4xx.h.2_8xJ100_UAmQAbr9Wjf_E10000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #71 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 216404 bytes
+
+
+** Section #72 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 168 bytes
+
+
+** Section #73 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 10944 bytes
+
+
+** Section #255 '.rel.debug_info' (SHT_REL)
+    Size   : 808 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    101 relocations applied to section #73 '.debug_info'
+
+
+** Section #74 '__ARM_grp.stm32f4xx_adc.h.2_sh$000_v1KX$ktln74_S10000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #75 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 13212 bytes
+
+
+** Section #76 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #77 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 544 bytes
+
+
+** Section #256 '.rel.debug_info' (SHT_REL)
+    Size   : 112 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    14 relocations applied to section #77 '.debug_info'
+
+
+** Section #78 '__ARM_grp.stm32f4xx_crc.h.2_kt0000_HGR6cJQTcN8_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #79 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 32 bytes
+
+
+** Section #80 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #81 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 184 bytes
+
+
+** Section #257 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #81 '.debug_info'
+
+
+** Section #82 '__ARM_grp.stm32f4xx_dbgmcu.h.2_871000_Eh3tIoADX74_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #83 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 1368 bytes
+
+
+** Section #84 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #85 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 188 bytes
+
+
+** Section #258 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #85 '.debug_info'
+
+
+** Section #86 '__ARM_grp.stm32f4xx_dma.h.2_s57000_a145EpAxzE7_l00000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #87 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 11876 bytes
+
+
+** Section #88 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #89 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 588 bytes
+
+
+** Section #259 '.rel.debug_info' (SHT_REL)
+    Size   : 144 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    18 relocations applied to section #89 '.debug_info'
+
+
+** Section #90 '__ARM_grp.stm32f4xx_exti.h.2_4HV000_c951sYC00d9_J10000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #91 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 1780 bytes
+
+
+** Section #92 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #93 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 472 bytes
+
+
+** Section #260 '.rel.debug_info' (SHT_REL)
+    Size   : 40 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    5 relocations applied to section #93 '.debug_info'
+
+
+** Section #94 '__ARM_grp.stm32f4xx_flash.h.2_4F4000_izEPxiE_dn1_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #95 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 8500 bytes
+
+
+** Section #96 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #97 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 384 bytes
+
+
+** Section #261 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #97 '.debug_info'
+
+
+** Section #98 '__ARM_grp.stm32f4xx_gpio.h.2_0l4000_1dBs9UyI2V6_700000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #99 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 6176 bytes
+
+
+** Section #100 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #101 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 696 bytes
+
+
+** Section #262 '.rel.debug_info' (SHT_REL)
+    Size   : 32 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    4 relocations applied to section #101 '.debug_info'
+
+
+** Section #102 '__ARM_grp.stm32f4xx_i2c.h.2_gX4000_GWlAmKcNM41_c00000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #103 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 7572 bytes
+
+
+** Section #104 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #105 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 352 bytes
+
+
+** Section #263 '.rel.debug_info' (SHT_REL)
+    Size   : 72 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    9 relocations applied to section #105 '.debug_info'
+
+
+** Section #106 '__ARM_grp.stm32f4xx_iwdg.h.2_QW0000_j8Iz2FdFqA5_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #107 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 976 bytes
+
+
+** Section #108 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #109 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 184 bytes
+
+
+** Section #264 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #109 '.debug_info'
+
+
+** Section #110 '__ARM_grp.stm32f4xx_pwr.h.2_Iz1000_YLCGcnHqBxa_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #111 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 2284 bytes
+
+
+** Section #112 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #113 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 184 bytes
+
+
+** Section #265 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #113 '.debug_info'
+
+
+** Section #114 '__ARM_grp.stm32f4xx_rcc.h.2_Iu8000_BfzzcOSFu34_a00000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #115 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 14868 bytes
+
+
+** Section #116 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #117 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 316 bytes
+
+
+** Section #266 '.rel.debug_info' (SHT_REL)
+    Size   : 56 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    7 relocations applied to section #117 '.debug_info'
+
+
+** Section #118 '__ARM_grp.stm32f4xx_rtc.h.2_0c8000_61eaC$0LvGe_k00000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #119 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 14112 bytes
+
+
+** Section #120 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #121 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 632 bytes
+
+
+** Section #267 '.rel.debug_info' (SHT_REL)
+    Size   : 136 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    17 relocations applied to section #121 '.debug_info'
+
+
+** Section #122 '__ARM_grp.stm32f4xx_sdio.h.2_Er5000_9nMJ$ApzS3a_n00000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #123 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 8436 bytes
+
+
+** Section #124 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #125 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 696 bytes
+
+
+** Section #268 '.rel.debug_info' (SHT_REL)
+    Size   : 160 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    20 relocations applied to section #125 '.debug_info'
+
+
+** Section #126 '__ARM_grp.stm32f4xx_spi.h.2_IY4000_jQ6E_y9KR95_l00000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #127 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 7512 bytes
+
+
+** Section #128 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #129 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 564 bytes
+
+
+** Section #269 '.rel.debug_info' (SHT_REL)
+    Size   : 144 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    18 relocations applied to section #129 '.debug_info'
+
+
+** Section #130 '__ARM_grp.stm32f4xx_syscfg.h.2_gQ1000__e_SQPvUw99_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #131 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 2812 bytes
+
+
+** Section #132 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #133 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 188 bytes
+
+
+** Section #270 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #133 '.debug_info'
+
+
+** Section #134 '__ARM_grp.stm32f4xx_tim.h.2_8wa000_xRGZOnFv6Q9_v00000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #135 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 18712 bytes
+
+
+** Section #136 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #137 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 912 bytes
+
+
+** Section #271 '.rel.debug_info' (SHT_REL)
+    Size   : 224 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    28 relocations applied to section #137 '.debug_info'
+
+
+** Section #138 '__ARM_grp.stm32f4xx_usart.h.2_UU3000_KVMYSY_U8Gb_g00000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #139 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 5380 bytes
+
+
+** Section #140 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #141 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 488 bytes
+
+
+** Section #272 '.rel.debug_info' (SHT_REL)
+    Size   : 104 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    13 relocations applied to section #141 '.debug_info'
+
+
+** Section #142 '__ARM_grp.stm32f4xx_wwdg.h.2_YH0000_kg41TFS5An2_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #143 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 500 bytes
+
+
+** Section #144 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #145 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 184 bytes
+
+
+** Section #273 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #145 '.debug_info'
+
+
+** Section #146 '__ARM_grp.misc.h.2_snV000_xc$Ax06ZIae_L10000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #147 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 1232 bytes
+
+
+** Section #148 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 80 bytes
+
+
+** Section #149 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 336 bytes
+
+
+** Section #274 '.rel.debug_info' (SHT_REL)
+    Size   : 56 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    7 relocations applied to section #149 '.debug_info'
+
+
+** Section #150 '__ARM_grp.stm32f4xx_cryp.h.2_oR2000_3aQmt2n0Cy7_B00000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #151 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 2968 bytes
+
+
+** Section #152 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #153 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 992 bytes
+
+
+** Section #275 '.rel.debug_info' (SHT_REL)
+    Size   : 272 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    34 relocations applied to section #153 '.debug_info'
+
+
+** Section #154 '__ARM_grp.stm32f4xx_hash.h.2_Ea2000_uFymS7Pu6q9_f00000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #155 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 1860 bytes
+
+
+** Section #156 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #157 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 472 bytes
+
+
+** Section #276 '.rel.debug_info' (SHT_REL)
+    Size   : 96 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    12 relocations applied to section #157 '.debug_info'
+
+
+** Section #158 '__ARM_grp.stm32f4xx_rng.h.2_QJ0000_$lHRD_i1KL2_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #159 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 560 bytes
+
+
+** Section #160 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #161 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 184 bytes
+
+
+** Section #277 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #161 '.debug_info'
+
+
+** Section #162 '__ARM_grp.stm32f4xx_can.h.2_YrY000_iQzpG$ELCdd_c20000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #163 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 7208 bytes
+
+
+** Section #164 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #165 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 936 bytes
+
+
+** Section #278 '.rel.debug_info' (SHT_REL)
+    Size   : 288 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    36 relocations applied to section #165 '.debug_info'
+
+
+** Section #166 '__ARM_grp.stm32f4xx_dac.h.2_wl3000_an1EPDTpMC3_a00000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #167 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 4328 bytes
+
+
+** Section #168 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #169 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 328 bytes
+
+
+** Section #279 '.rel.debug_info' (SHT_REL)
+    Size   : 56 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    7 relocations applied to section #169 '.debug_info'
+
+
+** Section #170 '__ARM_grp.stm32f4xx_dcmi.h.2_oT2000_RQku6oP1cG6_l00000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #171 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 3176 bytes
+
+
+** Section #172 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #173 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 704 bytes
+
+
+** Section #280 '.rel.debug_info' (SHT_REL)
+    Size   : 144 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    18 relocations applied to section #173 '.debug_info'
+
+
+** Section #174 '__ARM_grp.stm32f4xx_fsmc.h.2_QA4000_7UfCygwUrn5_E00000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #175 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 6252 bytes
+
+
+** Section #176 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 92 bytes
+
+
+** Section #177 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 1556 bytes
+
+
+** Section #281 '.rel.debug_info' (SHT_REL)
+    Size   : 296 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    37 relocations applied to section #177 '.debug_info'
+
+
+** Section #178 '__ARM_grp.stm32f4xx_conf.h.2_EM0000_YiSGHnOFIE6_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #179 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 164 bytes
+
+
+** Section #180 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 580 bytes
+
+
+** Section #181 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 180 bytes
+
+
+** Section #282 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #181 '.debug_info'
+
+
+** Section #182 '__ARM_grp.sys.h.2_Ya1000_v9ColmCohV6_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #183 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 1508 bytes
+
+
+** Section #184 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 80 bytes
+
+
+** Section #185 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 176 bytes
+
+
+** Section #283 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #185 '.debug_info'
+
+
+** Section #186 '__ARM_grp.exti.h.2_Ms0000_zKXWBG6umLe_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #187 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 24 bytes
+
+
+** Section #188 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 84 bytes
+
+
+** Section #189 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 180 bytes
+
+
+** Section #284 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #189 '.debug_info'
+
+
+** Section #190 '__ARM_grp.delay.h.2_Ms0000_C$hGkblssV6_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #191 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 24 bytes
+
+
+** Section #192 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 84 bytes
+
+
+** Section #193 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 180 bytes
+
+
+** Section #285 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #193 '.debug_info'
+
+
+** Section #194 '__ARM_grp.led.h.2_It0000_lhF3tNC_fyf_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #195 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 56 bytes
+
+
+** Section #196 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 84 bytes
+
+
+** Section #197 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 176 bytes
+
+
+** Section #286 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #197 '.debug_info'
+
+
+** Section #198 '__ARM_grp.key.h.2_kA0000_Y3hrvuiSaL6_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #199 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 268 bytes
+
+
+** Section #200 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 84 bytes
+
+
+** Section #201 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 176 bytes
+
+
+** Section #287 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #201 '.debug_info'
+
+
+** Section #202 '__ARM_grp.beep.h.2_gt0000_he_D6vE5y95_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #203 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 40 bytes
+
+
+** Section #204 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 84 bytes
+
+
+** Section #205 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 180 bytes
+
+
+** Section #288 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #205 '.debug_info'
+
+
+** Section #206 '__ARM_grp.exti.c.2_ow0000_qFsyhNAkA67_300000' (SHT_GROUP)
+    Size   : 16 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #207 '.debug_macinfo' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 28 bytes
+
+
+** Section #208 '.debug_line' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 196 bytes
+
+
+** Section #209 '.debug_info' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 180 bytes
+
+
+** Section #289 '.rel.debug_info' (SHT_REL)
+    Size   : 24 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+    3 relocations applied to section #209 '.debug_info'
+
+
+** Section #210 '__ARM_grp..debug_abbrev.group.2_Am0000_lbphKItke$2_000000' (SHT_GROUP)
+    Size   : 8 bytes (alignment 4)
+    Symbol table #214 '.symtab'
+
+
+** Section #211 '.debug_abbrev' (SHT_PROGBITS) [SHF_GROUP]
+    Size   : 1444 bytes
+
+
+** Section #212 '.arm_vfe_header' (SHT_PROGBITS)
+    Size   : 4 bytes (alignment 4)
+
+
+** Section #213 '.comment' (SHT_PROGBITS)
+    Size   : 1188 bytes
+
+
+** Section #214 '.symtab' (SHT_SYMTAB)
+    Size   : 4000 bytes (alignment 4)
+    String table #291 '.strtab'
+    Last local symbol no. 65
+
+
+** Section #290 '.shstrtab' (SHT_STRTAB)
+    Size   : 2537 bytes
+
+
+** Section #291 '.strtab' (SHT_STRTAB)
+    Size   : 11974 bytes
+
+
+** Section #292 '.ARM.attributes' (SHT_ARM_ATTRIBUTES)
+    Size   : 184 bytes
+
+

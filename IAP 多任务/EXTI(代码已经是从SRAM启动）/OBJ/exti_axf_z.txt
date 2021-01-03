@@ -1,0 +1,9 @@
+
+========================================================================
+
+** Object/Image Component Sizes
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+      3500        288        424         28       1636     321313   EXTI.axf
+      3500        288        424         28          0          0   ROM Totals for EXTI.axf

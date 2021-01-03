@@ -1,0 +1,8 @@
+
+========================================================================
+
+** Object/Image Component Sizes
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       462         42          0          0          0     441766   exti.o
